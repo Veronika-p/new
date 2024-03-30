@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title  %}Список заданий{% endblock %}
+
+{% block content  %}
+<div class="features">
+<h2>Список заданий</h2><br>
+    {% if students%}
+    {% for el in tasks%}
+    <div class="alert alert-warning">
+        <p>Задание  {{ el.number_tasks}} </p>
+    </div>
+    {% endfor%}
+    {% else%}
+    <p>Список заданий пуст!</p>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

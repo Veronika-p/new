@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+
+
+{% block title  %}Форма по добавлению ученика{% endblock %}
+
+{% block content  %}
+<div class="features">
+<h2>Форма по добавлению ученика</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name_student }}<br>
+        {{ form.number_class }}<br>
+        {{ form.word_class }}<br>
+        <input type="text" class="form-control" placeholder="Логин" name="login1" value="{{login}}"><br>
+        <input type="text" class="form-control" placeholder="Пароль" name="password1" value="{{password}}"><br>
+        <span>{{ error }}</span>
+
+        <button class="btn btn-success" type="submit">Добавить ученика</button>
+
+    </form>
+</div>
+
+
+{% endblock %}

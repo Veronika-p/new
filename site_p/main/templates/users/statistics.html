@@ -1,0 +1,32 @@
+<!-- templates/articles/login.html -->
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<style>
+    th, td{
+    padding: 5px;
+    border: 1px solid #eee
+    }
+</style>
+<div class="features">
+  <h2 align="center">Статистика</h2><br>
+<table border="1" cellpadding="0" cellspacing="0" width="800px" align="center">
+
+    <tr>
+        <th>Дата и время теста</th>
+        <th>Имя студента</th>
+        <th>Количество вопросов</th>
+        <th>Количество правильных ответов</th>
+    </tr>
+     {% for i in statistics %}
+     <tr>
+        <td>{{i.datetime}}</td>
+        <td>{{i.user.name_student}}</td>
+        <td>{{i.count_question}}</td>
+        <td>{{i.bal}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

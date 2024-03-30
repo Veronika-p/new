@@ -1,0 +1,44 @@
+<!-- templates/articles/login.html -->
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<style>
+aside{
+float: left;
+background: #BABDC9;
+width: 20%;
+padding: 2.5%;
+height: 500vh;
+
+}
+
+</style>
+  <h2>Мои тесты</h2>
+{% if count == 0 %}
+<p>Тестов нет</p>
+{% else %}
+<form method="post">
+  {% csrf_token %}
+  <div>
+
+
+  {% for t in tests_user %}
+
+  <p>
+    Задание № {{t.number_tasks}}
+  </p>
+  <p align="center">
+    <img style="width: 800px" src="/media/{{t.image_tasks}}">
+  </p>
+  <p>
+    Ваш ответ: <input type="text" name="{{t.id}}" value="">
+  </p>
+
+{% endfor %}
+    </div>
+  <div>
+    <button class="btn btn-success">Отправить</button>
+  </div>
+</form>
+{% endif %}
+{% endblock %}

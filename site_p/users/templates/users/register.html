@@ -1,0 +1,7 @@
+{% extends 'main/layout.html' %}
+{% block content %}
+        <form method="POST">
+                <button class="btn btn-outline-info" type="submit">Регистрация</button>
+        </form>
+                Уже есть аккаунт? <a class="ml-2" href="{% url 'register'%}">Вход</a>
+{% endblock content %}

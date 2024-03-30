@@ -1,0 +1,14 @@
+<!-- templates/articles/login.html -->
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="features">
+  <h2>Авторизация на сайте</h2>
+
+  <form class="form-control" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-warning" type="submit">Войти</button>
+  </form>
+</div>
+{% endblock %}
